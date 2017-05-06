@@ -195,7 +195,7 @@ BIOS:
 打开 `/etc/pacman.conf` 文件，在文件末尾加入：
 
     [archlinuxcn]
-    SigLevel = Optional TrustAll
+    SigLevel = Optional TrustedOnly
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
 然后运行：

@@ -64,6 +64,8 @@ BIOS:
 
 为了省事，这里还是推荐直接连接到一个有互联网访问权限的有线网。
 
+无线网络直接运行 `wifi-menu` 选择无线网络即可
+
 ### 更新系统时间
 
     timedatectl set-ntp true
@@ -129,12 +131,13 @@ BIOS:
 
     systemctl enable dhcpcd@eth0.service
     pacman -S networkmanager network-manager-applet
+    pacman -S iw dialog net-tools
 
 ### 设置 root 密码
 
 运行：
 
-    passwd
+    passwd root
 
 然后输入两次密码即可，注意这里密码是不显示的。
 
@@ -208,29 +211,27 @@ BIOS:
 
 Google Chrome:
 
-    yaourt -S google-chrome
+    pacman -S google-chrome
 
 Sogou Pinyin:
 
-    yaourt -S fcitx fcitx-configtool fcitx-im fcitx-sogoupinyin
+    pacman -S fcitx fcitx-configtool fcitx-im fcitx-sogoupinyin
 
-在 `~/.xprofile` 文件中写入下面的信息：
+在 `/etc/environment` 文件中写入下面的信息：
 
-    export LC_ALL=zh_CN.UTF-8
-    export XIM=fcitx
-    export XIM_PROGRAM=fcitx
-    export GTK_IM_MODULE=fcitx
-    export QT_IM_MODULE=fcitx
-    export XMODIFIERS="@im=fcitx"
-    exec fcitx &
+    XIM=fcitx
+    XIM_PROGRAM=fcitx
+    GTK_IM_MODULE=fcitx
+    QT_IM_MODULE=fcitx
+    XMODIFIERS=@im=fcitx
 
 ss-qt5:
 
-    yaourt -S shadowsocks-qt5
+    pacman -S shadowsocks-qt5
 
 Netease Cloud Music:
 
-    yaourt -S netease-cloud-music
+    pacman -S netease-cloud-music
 
 VLC:
 
@@ -242,7 +243,16 @@ ProxyChains:
 
 ### 常用字体
 
-    pacman -S wqy-microhei ttf-dejavu ttf-droid cantarell-fonts adobe-source-han-sans-cn-fonts texlive-most noto-fonts noto-fonts-cjk noto-fonts-emoji
+ - wqy-zenhei
+ - wqy-microhei
+ - ttf-dejavu
+ - ttf-droid
+ - cantarell-fonts
+ - adobe-source-code-pro-fonts
+ - adobe-source-han-sans-cn-fonts
+ - adobe-source-han-serif-cn-fonts
+ - noto-fonts
+ - noto-fonts-emoji
 
 ### GNOME 扩展
 
@@ -250,19 +260,23 @@ ProxyChains:
 
 这里列出我常用的 GNOME 扩展：
 
-    Alternatetab —— 增强 Alt + Tab 的功能
-    Battery status —— 显示电池电量的百分比
-    Dash to Dock —— 将左侧的 Dash 变成一个 Dock 栏，我一般会把它放在底部
-    Hide workspace thumbnails —— 隐藏 Overview 视图右边的工作区栏
-    Media player indicator —— 显示音乐播放器的状态
-    Netspeed ——在顶栏上显示网速
-    Removable drive menu —— 显示连接到电脑的usb设备
-    User themes —— 用来启用自定义的shell主题
-    Workspace indicator —— 在顶栏显示当前示工作区的序号
+ - Alternatetab —— 增强 Alt + Tab 的功能
+ - Battery status —— 显示电池电量的百分比
+ - Dash to Dock —— 将左侧的 Dash 变成一个 Dock 栏，我一般会把它放在底部
+ - Hide workspace thumbnails —— 隐藏 Overview 视图右边的工作区栏
+ - Media player indicator —— 显示音乐播放器的状态
+ - Netspeed ——在顶栏上显示网速
+ - Removable drive menu —— 显示连接到电脑的usb设备
+ - User themes —— 用来启用自定义的shell主题
+ - Workspace indicator —— 在顶栏显示当前示工作区的序号
+
+### GNOME 主题
+
+    pacman -S arc-gtk-theme
 
 ### 桌面美化
 
-    yaourt -S gnome-tweak-tool
+    pacman -S gnome-tweak-tool
 
 然后找到 `Tweak Tool` 这个程序，就可以进行详细的设置了。
 

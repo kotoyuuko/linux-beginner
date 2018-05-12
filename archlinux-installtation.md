@@ -20,7 +20,7 @@
 
     dd bs=4M if=/path/to/archlinux.iso of=/dev/sdb status=progress && sync
 
-如果你之前是个 Windows 用户，来 [这里](https://sourceforge.net/p/usbwriter/wiki/Documentation/) 下载一个名叫 USBWriter 的软件，打开软件按照提示操作即可。
+如果你之前是个 Windows 用户，来 [https://rufus.akeo.ie/](https://rufus.akeo.ie/) 下载一个名叫 Rufus 的软件，打开软件按照提示操作即可。
 
 ### 从 Arch Linux 安装 U 盘启动
 
@@ -94,7 +94,7 @@ BIOS:
 
     Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 
-你可以选用你喜欢的编辑器，不过新手还是推荐用 `nano`，简单实用。
+你可以选用你喜欢的编辑器，新手推荐用 `nano`，简单实用。
 
 ### 安装基本系统
 
@@ -261,26 +261,28 @@ ProxyChains:
 这里列出我常用的 GNOME 扩展：
 
  - Alternatetab —— 增强 Alt + Tab 的功能
- - Battery status —— 显示电池电量的百分比
+ - Clipboard indicator —— 方便的剪贴板管理工具
  - Dash to Dock —— 将左侧的 Dash 变成一个 Dock 栏，我一般会把它放在底部
+ - Drop down terminal —— 下拉终端
+ - Dynamic top bar —— 顶栏透明
+ - Hide top bar —— 顶栏自动隐藏
  - Hide workspace thumbnails —— 隐藏 Overview 视图右边的工作区栏
  - Media player indicator —— 显示音乐播放器的状态
- - Netspeed ——在顶栏上显示网速
  - Removable drive menu —— 显示连接到电脑的usb设备
+ - Topicons plus —— 托盘区域图标显示
  - User themes —— 用来启用自定义的shell主题
  - Workspace indicator —— 在顶栏显示当前示工作区的序号
 
-### GNOME 主题
+### GNOME 主题图标
 
-    pacman -S arc-gtk-theme
+    pacman -S adapta-gtk-theme papirus-icon-theme
 
 ### 桌面美化
 
     pacman -S gnome-tweak-tool
 
-然后找到 `Tweak Tool` 这个程序，就可以进行详细的设置了。
+然后找到 `Tweaks` 这个程序，就可以进行详细的设置了。
 
 ### 完成
 
 没错，这就完了～
-
